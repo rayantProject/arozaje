@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "bycedric.vscode-expo",
+        "donjayamanne.git-extension-pack",
+        "github.copilot",
+        "wallabyjs.quokka-vscode",
+        "msjsdiag.vscode-react-native",
+        "dsznajder.es7-react-js-snippets"
+    ]
+}
