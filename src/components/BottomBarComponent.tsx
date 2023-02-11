@@ -7,6 +7,7 @@ import TabBarIcon from '../utils/TabIcon';
 import GardenView from '../screens/GardenView';
 import SettingView from '../screens/SettingView';
 import ExpertView from '../screens/ExpertView';
+import style from '../utils/mainStyle';
 
 
 interface TabScreen {
@@ -37,7 +38,7 @@ const tabScreens: TabScreen[] = [
             tabBarIcon: ({ color = "black" }) => <TabBarIcon name="groups" color={color} />
         }
     },  {
-        name: 'Acceuil',
+        name: 'recherche',
         component: HomeView,
         options: {
             
@@ -70,6 +71,9 @@ class BottomBarComponent extends React.Component {
         return (
             <Tab.Navigator
                 initialRouteName="Acceuil"
+                screenOptions={
+                    {}
+                }
             >
                 {tabScreens.map((screen, index) => (
                     <Tab.Screen
