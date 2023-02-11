@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 
 
-class ProduitView extends React.Component {
+class ExpertView extends React.Component {
     render() {
         return (
           <View>
-            <Text>ProduitsList</Text>
+            <Text>Garden</Text>
           </View>
         );
       }
@@ -14,4 +14,4 @@ class ProduitView extends React.Component {
     
 }
 
-export default ProduitView;
+export default ExpertView;
