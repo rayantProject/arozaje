@@ -2,12 +2,15 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeView from '../screens/SearchView';
 import MapView from '../screens/MapView';
+import { Pressable, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 import TabBarIcon from '../utils/TabIcon';
 import GardenView from '../screens/GardenView';
 import SettingView from '../screens/SettingView';
 import ExpertView from '../screens/ExpertView';
-import style from '../utils/mainStyle';
+import Color from '../constants/Color';
+import TabIconModify from '../utils/TabIconModify';
 
 
 interface TabScreen {
@@ -16,17 +19,14 @@ interface TabScreen {
     options?: any;
 }
 
-
-
-
 const tabScreens: TabScreen[] = [
    
     {
         name: 'map',
         component: MapView,
         options: {
-            
-            tabBarIcon: ({ color = "black" }) => <TabBarIcon name="map" color={color} />
+            title: 'Map',
+            tabBarIconName:"map"
         }
     },
   
@@ -34,32 +34,35 @@ const tabScreens: TabScreen[] = [
         name: 'experts',
         component: ExpertView,
         options: {
-            
-            tabBarIcon: ({ color = "black" }) => <TabBarIcon name="groups" color={color} />
+            title: 'Experts', 
+            tabBarIconName:"groups"
         }
-    },  {
-        name: 'recherche',
+    },  
+   
+    {
+        name: 'garden',
+        component: GardenView,
+        options: {
+
+            title: 'mon jardin',
+            tabBarIconName: "grass"
+            // headerShown: false,
+        }
+    }, {
+        name: 'search',
         component: HomeView,
         options: {
-            
-            tabBarIcon: ({ color = "black" }) => <TabBarIcon name="search" color={color} />
+            title: 'rechercher',
+            tabBarIconName:"search" 
         }
     
     },
     {
-        name: 'mon jardin',
-        component: GardenView,
-        options: {
-            
-            tabBarIcon: ({ color = "black" }) => <TabBarIcon name="grass" color={color} />
-        }
-    },
-    {
-        name: 'reglage',
+        name: 'setting',
         component: SettingView,
         options: {
-            
-            tabBarIcon: ({ color = "black" }) => <TabBarIcon name="settings" color={color} />
+            title: 'paramètres',
+            tabBarIconName:"settings"
         }
     }
 ];
@@ -69,18 +72,56 @@ class BottomBarComponent extends React.Component {
 
     render() {
         return (
-            <Tab.Navigator
-                initialRouteName="Acceuil"
-                screenOptions={
-                    {}
+            <Tab.Navigator 
+            initialRouteName="garden"
+            screenOptions={
+                {
+                    tabBarActiveTintColor: Color.green.myrtleGreen,
                 }
+            }
+            
+            // screenOptions={
+            //     {
+            //         tabBarActiveTintColor: Color.green.myrtleGreen,   
+            //     }
+            // }
+            
             >
                 {tabScreens.map((screen, index) => (
                     <Tab.Screen
                         key={index} 
                         name={screen.name}
                         component={screen.component}
-                        options={screen.options}
+                        // tabStyle={{backgroundColor: Color.green.main}}
+                        options= {
+                            {
+                                
+                                tabBarLabel: screen.name == 'garden' ? () => null : screen.options.title,
+                                tabBarIcon: ({ focused, color, size }) => {
+
+                                    return (
+                                        screen.name === 'garden' ? (<TabIconModify name={screen.options.tabBarIconName} color={"white"} ></TabIconModify>) : (<TabBarIcon name={screen.options.tabBarIconName} color={color} />)
+                                    );
+                                },
+                                // headerBackground: () => (
+                                //     <View style={{ flex: 1, backgroundColor: 'red' }} />
+                                // ),
+                                // headerTitleStyle: { fontSize: 20 },
+                                // headerTintColor: 'white',
+                                // headerShown: false,
+                                headerTitle : screen.options.title,
+
+                                headerRight: () => (
+                                    <Pressable onPress={() => alert('This is a button!')}
+                                    style={{ marginRight: 15 }}
+                                        
+                                    >
+                                        <TabBarIcon name="person"  color='black'  />
+                                    </Pressable>
+
+                                ),
+                            }
+                        }
                     />
                 ))}
             </Tab.Navigator>

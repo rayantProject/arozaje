@@ -1,11 +1,13 @@
-const style = {
-    tabBar    : { 
-        backgroundColor: '#EBF5EE',
-        color: "F9FEF9"
-    },
+const MainStyle = {
+    // tabBar    : { 
+    //     backgroundColor: '#EBF5EE',
+    //     color: "F9FEF9"
+    // },
     view     : {
-        backgroundColor : '#41715E',
-        color: "#1B3C35"
+        backgroundColor : '#EBF5EE',
+    },
+    container : {
+        backgroundColor : '#F9FEF9',
     },
     header : {
     color : '#41715E',
@@ -14,4 +16,4 @@ const style = {
 };
 
 
-export default style;
+export default MainStyle;

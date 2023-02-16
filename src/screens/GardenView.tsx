@@ -1,13 +1,36 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import TabMenuGarden from '../components/garden/TabMenuGarden';
+
+import UserHeader from '../components/garden/UserHeader';
+
+
+
+
+
+const style = StyleSheet.create({
+
+  
+    container: {  
+        // backgroundColor: MainStyle.view.backgroundColor,
+        // justifyContent: 'center',
+        // alignContent: 'center',
+        // alignItems: 'center',
+        
+        // width: '90%',
+        height: '100%',
+        // flexDirection: 'row',
+        paddingVertical: 5,
+    }});
 
 
 class GardenView extends React.Component {
     render() {
         return (
-          <View>
-            <Text>Garden</Text>
-          </View>
+          <SafeAreaView style={style.container}>
+            <UserHeader />
+            <TabMenuGarden />
+          </SafeAreaView>
         );
       }
 
