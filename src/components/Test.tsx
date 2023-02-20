@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Plante from '../interface/plante';
+import Plante from '../types/plante';
 import { Text, View } from 'react-native';
 
 // interface Props {

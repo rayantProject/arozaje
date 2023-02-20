@@ -1,12 +1,8 @@
 import * as React from 'react';
-import { Text, ScrollView, FlatList, Touchable, TouchableOpacity  } from 'react-native';
+import {  FlatList,  TouchableOpacity  } from 'react-native';
 import ExpertsHeader from '../components/experts/ExpertsHeader';
 import ExpertListElement from '../components/experts/ExpertListElement';
-
-// import { NavigationScreenProp } from 'react-navigation';
-
 const data = Array(10).fill(0);
-
 interface Props {
     navigation: any;
 }
@@ -31,19 +27,14 @@ class ExpertView extends React.Component<Props, {}> {
 
     render() {
         return (
-            <ScrollView>
-                <ExpertsHeader />
                 <FlatList
+                    ListHeaderComponent={<ExpertsHeader />}
                     data={data}
                     renderItem={this.renderItem}
                     keyExtractor={(item, index) => index.toString()}
-                />
-
-            </ScrollView>
+                /> 
         );
-      }
-
-    
+    }
 }
 
 export default ExpertView;

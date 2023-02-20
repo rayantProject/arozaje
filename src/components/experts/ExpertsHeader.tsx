@@ -24,7 +24,6 @@ class ExpertsHeader extends React.Component {
                 enablesReturnKeyAutomatically={true}
                 returnKeyType="search"
                 returnKeyLabel='Recherche'
-
                 placeholder={'Recherche...'}
                 style={style.searchBar}
             />

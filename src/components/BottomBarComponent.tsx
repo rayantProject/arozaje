@@ -98,7 +98,6 @@ class BottomBarComponent extends React.Component {
                                 
                                 tabBarLabel: screen.name == 'garden' ? () => null : screen.options.title,
                                 tabBarIcon: ({ focused, color, size }) => {
-
                                     return (
                                         screen.name === 'garden' ? (<TabIconModify name={screen.options.tabBarIconName} color={"white"} ></TabIconModify>) : (<TabBarIcon name={screen.options.tabBarIconName} color={color} />)
                                     );
@@ -110,16 +109,14 @@ class BottomBarComponent extends React.Component {
                                 // headerTintColor: 'white',
                                 // headerShown: false,
                                 headerTitle : screen.options.title,
-
-                                headerRight: () => (
-                                    <Pressable onPress={() => alert('This is a button!')}
-                                    style={{ marginRight: 15 }}
+                                // headerRight: () => (
+                                //     <Pressable onPress={() => alert('This is a button!')}
+                                //     style={{ marginRight: 15 }}
                                         
-                                    >
-                                        <TabBarIcon name="person"  color='black'  />
-                                    </Pressable>
-
-                                ),
+                                //     >
+                                //         <TabBarIcon name="person"  color='black'  />
+                                //     </Pressable>
+                                // ),
                             }
                         }
                     />

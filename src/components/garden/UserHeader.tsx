@@ -1,5 +1,5 @@
 import * as React from 'react';
-import User from '../../interface/user';
+import User from '../../types/user';
 import { Text, View, StyleSheet, Image  } from 'react-native';
 import TabBarIcon from '../../utils/TabIcon';
 import Color from '../../constants/Color';
