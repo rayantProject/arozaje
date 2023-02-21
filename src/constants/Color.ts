@@ -17,6 +17,7 @@ const Color = {
     danger: '#DC143C',
     info: '#00BFFF',
     light: '#F0F8FF',
+    gray: "lightgray",
     dark: '#000000',
     white: '#FFFFFF',
     black: '#000000',
