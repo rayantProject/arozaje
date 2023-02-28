@@ -1,8 +1,9 @@
 import * as React from 'react';
-import User from '../../types/user';
+import User from '../../../types/user';
 import { Text, View, StyleSheet, Image  } from 'react-native';
-import TabBarIcon from '../../utils/TabIcon';
-import Color from '../../constants/Color';
+// import TabBarIcon from '../../../constants/Color';
+import Color from '../../../constants/Color';
+import TabBarIcon from '../../../utils/TabIcon';
 
 const style = StyleSheet.create({
   container: {
@@ -32,7 +33,7 @@ class UserHeader extends React.Component {
     return (
       <View style={style.container}>
         
-          <Image source={require('../../assets/test/photo.png')} />
+          <Image source={require('../../../assets/test/photo.png')} />
           <View>
           <Text style={style.name}>Amira Traore</Text>
           <View style={style.rate}>

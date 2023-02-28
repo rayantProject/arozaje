@@ -1,6 +1,6 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import * as React from 'react';
-import Color from '../../constants/Color';
+import Color from '../../../constants/Color';
 import KeepPlants from './MaterialTabs/KeepPlants';
 import OurPlants from './MaterialTabs/OurPlants';
 

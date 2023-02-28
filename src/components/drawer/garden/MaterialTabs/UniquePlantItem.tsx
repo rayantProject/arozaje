@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Text, View, Image, StyleSheet, Pressable } from 'react-native';
-import Color from '../../../constants/Color';
+import Color from '../../../../constants/Color';
 import {useNavigation} from '@react-navigation/native';
 
 
@@ -35,7 +35,7 @@ function UniquePlantItem() {
         <Pressable
           onPress={() => navigation.navigate('KeepPlantModal')  }
         >
-          <Image style={style.img} source={require('../../../assets/test/imagePlant.png')} />
+          <Image style={style.img} source={require('../../../../assets/test/imagePlant.png')} />
           <Text >LE POTHOS N’JOY</Text>
         </Pressable>
       </View>

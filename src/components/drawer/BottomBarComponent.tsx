@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeView from '../screens/SearchView';
-import MapView from '../screens/MapView';
+import HomeView from '../../screens/drawerNavigation/SearchView';
+import MapView from '../../screens/drawerNavigation/MapView';
 import { Pressable, StyleSheet } from 'react-native';
 import { View } from 'react-native';
 
-import TabBarIcon from '../utils/TabIcon';
-import GardenView from '../screens/GardenView';
-import SettingView from '../screens/SettingView';
-import ExpertView from '../screens/ExpertView';
-import Color from '../constants/Color';
-import TabIconModify from '../utils/TabIconModify';
+import TabBarIcon from '../../utils/TabIcon';
+import GardenView from '../../screens/drawerNavigation/GardenView';
+import SettingView from '../../screens/drawerNavigation/SettingView';
+import ExpertView from '../../screens/drawerNavigation/ExpertView';
+import Color from '../../constants/Color';
+import TabIconModify from '../../utils/TabIconModify';
 
 
 interface TabScreen {

@@ -31,9 +31,7 @@ class DataMananger {
         return data;
     }
 
-    
 
-    
 }
 
 

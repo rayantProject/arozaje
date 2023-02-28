@@ -2,8 +2,8 @@ import { Link } from '@react-navigation/native';
 import * as React from 'react';
 import { Text, View, Image, StyleSheet,  TouchableOpacity } from 'react-native';
 
-import Color from '../../constants/Color';
-import TabBarIcon from '../../utils/TabIcon';
+import Color from '../../../constants/Color';
+import TabBarIcon from '../../../utils/TabIcon';
 
 
 const style = StyleSheet.create({
@@ -62,7 +62,7 @@ class KeepPlantModal extends React.Component {
             <View style={style.container} >
                 <Text style={style.text}>LE POTHOS N’JOY</Text>
                 <TouchableOpacity style={style.storyBtn}>
-                    <Image style={style.image} source={require('../../assets/test/imagePlant.png')} />
+                    <Image style={style.image} source={require('../../../assets/test/imagePlant.png')} />
                 </TouchableOpacity>
 
                 <Link to={{screen: "camera"}}>

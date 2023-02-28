@@ -3,8 +3,9 @@ import Plante from "./plant";
  interface User {
     id : number;
     name : string;
+    password : string;
     email : string;
-    avatar : string | null;
+    avatar? : string ;
     address : string;
     firstName : string;
     lastName : string;

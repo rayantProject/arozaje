@@ -1,8 +1,8 @@
 import * as React from 'react';
-import User from '../../types/user';
+import User from '../../../types/user';
 import { Text, View, StyleSheet, Image  } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import Color from '../../constants/Color';
+import Color from '../../../constants/Color';
 
 const style = StyleSheet.create({
   container: {
@@ -45,7 +45,7 @@ class ExpertListElement extends React.Component {
     return (
       <View style={style.container}>
         
-          <Image style={style.image} source={require('../../assets/test/photo.png')} />
+          <Image style={style.image} source={require('../../../assets/test/photo.png')} />
           <View style={style.secondContainer} >
           <Text style={style.name}>Amira Traore</Text>
           <View style={style.rate}>

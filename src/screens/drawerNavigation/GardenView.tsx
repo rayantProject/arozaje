@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
-import TabMenuGarden from '../components/garden/TabMenuGarden';
+import TabMenuGarden from '../../components/drawer/garden/TabMenuGarden';
 
-import UserHeader from '../components/garden/UserHeader';
+import UserHeader from '../../components/drawer/garden/UserHeader';
 
 
 

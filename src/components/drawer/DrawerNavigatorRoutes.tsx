@@ -3,8 +3,8 @@ import { Pressable, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomBarComponent from './BottomBarComponent';
 import KeepPlantModal from './modal/KeepPlantModal';
-import CameraView from '../utils/Camera';
-import MessageView from '../screens/MessageView';
+import CameraView from '../../utils/Camera';
+import MessageView from '../../screens/drawerNavigation/MessageView';
 import StoryView from './garden/story/StoryView';
 const Stack = createNativeStackNavigator();
 

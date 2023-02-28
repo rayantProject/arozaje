@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { MaterialIcons } from '@expo/vector-icons';
 import { TextInput, View, KeyboardAvoidingView, StyleSheet, TouchableOpacity, FlatList  } from 'react-native';
-import Color from '../constants/Color';
+import Color from '../../constants/Color';
 
-import MessagesBuble from '../components/chat/MessagesBuble';
-import Message from '../types/message';
-import User from '../types/user';
+import MessagesBuble from '../../components/drawer/chat/MessagesBuble';
+import Message from '../../types/message';
+import User from '../../types/user';
 
 
 const styles = StyleSheet.create({
@@ -70,9 +70,10 @@ class MessageView extends React.Component<{}, State>{
                 name: 'test',
                 email: '',
                 password: '',
-                avatar: '',
-                plantesInGarden: [],
-                plantesToKeep: []
+                role: "user",
+                address: '',
+                firstName: '',
+                lastName: '',
             },
             messageContent: '',
         };

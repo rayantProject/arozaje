@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import RootComponent from '../components/DrawerNavigatorRoutes';
+import RootComponent from '../components/drawer/DrawerNavigatorRoutes';
 
 class Navigation extends React.Component {
     render() {
