@@ -5,6 +5,7 @@ import BottomBarComponent from './BottomBarComponent';
 import KeepPlantModal from './modal/KeepPlantModal';
 import CameraView from '../utils/Camera';
 import MessageView from '../screens/MessageView';
+import StoryView from './garden/story/StoryView';
 const Stack = createNativeStackNavigator();
 
 class RootComponent extends React.Component {
@@ -27,7 +28,6 @@ class RootComponent extends React.Component {
                                     <Pressable style={{
                                         marginRight: 20,
                                     }} onPress={() => goBack() }>
-                                        <Text>cancel</Text>
                                     </Pressable>)
                             }) }>
                         <Stack.Screen name="camera" component={CameraView} 
@@ -35,8 +35,8 @@ class RootComponent extends React.Component {
                         ({ navigation }) => ({
                             headerTitleAlign: 'center',
                         })} 
-                        
                         />
+                        
                 </Stack.Group>
 
                 <Stack.Group screenOptions={{ presentation: 'card' }}>

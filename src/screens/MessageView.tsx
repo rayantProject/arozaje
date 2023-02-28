@@ -5,7 +5,7 @@ import { TextInput, View, KeyboardAvoidingView, StyleSheet, TouchableOpacity, Fl
 import Color from '../constants/Color';
 
 import MessagesBuble from '../components/chat/MessagesBuble';
-import Message from '../types/messages';
+import Message from '../types/message';
 import User from '../types/user';
 
 

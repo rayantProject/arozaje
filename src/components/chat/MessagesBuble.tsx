@@ -2,7 +2,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity  } from 'react-native';
 import Color from '../../constants/Color';
-import Message from '../../types/messages';
+import Message from '../../types/message';
 
 const styles = StyleSheet.create({
     TouchableOpacity:{

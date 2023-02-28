@@ -1,66 +1,86 @@
-import Carousel from 'react-native-snap-carousel';
 import React from 'react';
-import {Dimensions, Image, StyleSheet, View, Text} from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableWithoutFeedback } from 'react-native';
 
+interface Story {
+  id: number;
+  imageUrl: string;
+  title: string;
+}
 
-const styles = StyleSheet.create({
-    container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    },
-    image: {
-    width: '100%',
-    height: 300,
-    borderRadius: 10,
-    resizeMode: 'cover',
-    marginHorizontal: 30,
-    },
-    text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginVertical: 20,
-    },
-});
+interface Props {
+  stories: Story[];
+}
 
 interface State {
-    stories: Array<{id: number; imageUrl: string}>;
-    activeIndex: number;
+  activeStoryIndex: number;
 }
 
-class StoryView extends React.Component<{}, State> {
-    constructor(props: {}) {
+class StoryCarousel extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
-        stories: [
-        {id: 1, imageUrl: '../../../assets/test/imagePlant.png'},
-        {id: 2, imageUrl: '../../../assets/test/plant2.png'},
-        {id: 3, imageUrl: '../../../assets/test/plant1.png'},
-        ],
-        activeIndex: 0,
+      activeStoryIndex: 0,
     };
-    }
+  }
 
-    render() {
+  handleStoryPress = (index: number) => {
+    this.setState({ activeStoryIndex: index });
+  };
+
+  render() {
+    const { stories } = this.props;
+    const { activeStoryIndex } = this.state;
+
     return (
-        <View style={styles.container}>
-        <Carousel
-            data={this.state.stories}
-            renderItem={({item}) => (
-            <Image source={{uri: item.imageUrl}} style={styles.image} />
-            )}
-            sliderWidth={Dimensions.get('window').width}
-            itemWidth={Dimensions.get('window').width - 60}
-            onSnapToItem={index => this.setState({activeIndex: index})}
-        />
-        <Text style={styles.text}>
-            Story {this.state.stories[this.state.activeIndex].id}
-        </Text>
-        </View>
+      <View style={styles.container}>
+        {stories.map((story, index) => (
+          <TouchableWithoutFeedback key={story.id} onPress={() => this.handleStoryPress(index)}>
+            <View style={[styles.storyContainer, index === activeStoryIndex && styles.activeStoryContainer]}>
+              <Image source={{ uri: story.imageUrl }} style={styles.storyImage} />
+              <Text style={[styles.storyTitle, index === activeStoryIndex && styles.activeStoryTitle]}>{story.title}</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        ))}
+      </View>
     );
-    }
+  }
 }
 
+const { width } = Dimensions.get('window');
+const storyWidth = width / 4;
 
-export default StoryView;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: storyWidth + 20,
+  },
+  storyContainer: {
+    width: storyWidth,
+    height: storyWidth,
+    borderRadius: storyWidth / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 10,
+  },
+  activeStoryContainer: {
+    borderWidth: 2,
+    borderColor: '#ffffff',
+  },
+  storyImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: storyWidth / 2,
+  },
+  storyTitle: {
+    marginTop: 5,
+    fontSize: 12,
+    color: '#a9a9a9',
+  },
+  activeStoryTitle: {
+    color: '#ffffff',
+  },
+});
+
+export default StoryCarousel;

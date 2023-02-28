@@ -1,13 +1,14 @@
-import Plante from "./plante";
+import Plante from "./plant";
 
  interface User {
     id : number;
     name : string;
     email : string;
-    password : string;
-    avatar : string;
-    plantesInGarden : Plante[];
-    plantesToKeep : Plante[];
+    avatar : string | null;
+    address : string;
+    firstName : string;
+    lastName : string;
+    role: "user" | "expert";
 }
 
 

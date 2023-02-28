@@ -79,20 +79,12 @@ class BottomBarComponent extends React.Component {
                     tabBarActiveTintColor: Color.green.myrtleGreen,
                 }
             }
-            
-            // screenOptions={
-            //     {
-            //         tabBarActiveTintColor: Color.green.myrtleGreen,   
-            //     }
-            // }
-            
             >
                 {tabScreens.map((screen, index) => (
                     <Tab.Screen
                         key={index} 
                         name={screen.name}
                         component={screen.component}
-                        // tabStyle={{backgroundColor: Color.green.main}}
                         options= {
                             {
                                 
@@ -102,21 +94,7 @@ class BottomBarComponent extends React.Component {
                                         screen.name === 'garden' ? (<TabIconModify name={screen.options.tabBarIconName} color={"white"} ></TabIconModify>) : (<TabBarIcon name={screen.options.tabBarIconName} color={color} />)
                                     );
                                 },
-                                // headerBackground: () => (
-                                //     <View style={{ flex: 1, backgroundColor: 'red' }} />
-                                // ),
-                                // headerTitleStyle: { fontSize: 20 },
-                                // headerTintColor: 'white',
-                                // headerShown: false,
                                 headerTitle : screen.options.title,
-                                // headerRight: () => (
-                                //     <Pressable onPress={() => alert('This is a button!')}
-                                //     style={{ marginRight: 15 }}
-                                        
-                                //     >
-                                //         <TabBarIcon name="person"  color='black'  />
-                                //     </Pressable>
-                                // ),
                             }
                         }
                     />
